@@ -1,8 +1,17 @@
 import axios from "axios";
 
-const isLocalhost = true;
+const isLocalhost = Boolean(
+  window.location.hostname === "localhost" ||
+    // IPv6 locahost address
+    window.location.hostname === "[::1]"
+  // window.location.hostname.match(
 
-const SERVER_URL = "http://localhost:5000";
+  // )
+);
+
+const SERVER_URL = isLocalhost
+  ? "http://localhost:5000"
+  : "https://api.sse.techfortified.com";
 
 export const Axios = axios.create({
   baseURL: `${SERVER_URL}/api`,

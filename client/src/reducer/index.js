@@ -1,6 +1,7 @@
 import { GET_POSTS, GET_POST_STREAM, POST_REACTION } from "../actions";
 
 export const appReducer = (state, action) => {
+  // console.log(state, action);
   switch (action.type) {
     case GET_POSTS:
       const { data, error } = action.payload;

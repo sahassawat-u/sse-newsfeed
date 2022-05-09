@@ -17,6 +17,7 @@ const PostCard = ({ post }) => {
     appDispatch,
   } = useAppContext();
 
+  console.log(post.likers.includes(userId));
   const handlePostLike = async (_post) => {
     try {
       appDispatch({
@@ -48,7 +49,7 @@ const PostCard = ({ post }) => {
         </MDBCardSubTitle>
       </MDBCardBody>
       <MDBCardFooter>
-        {post.likers.inclues(userId) ? (
+        {post.likers.includes(userId) ? (
           <>
             {post.likers.length}
             <MDBIcon

@@ -1,22 +1,18 @@
 import {
-    MDBBtn,
-    MDBInput,
-    MDBModalBody,
-    MDBModalDialog,
-    MDBModalFooter,
-    MDBModalHeader,
-    MDBModalTitle,
-    MDBSpinner
+  MDBBtn,
+  MDBInput,
+  MDBModal,
+  MDBModalBody,
+  MDBModalContent,
+  MDBModalDialog,
+  MDBModalFooter,
+  MDBModalHeader,
+  MDBModalTitle,
+  MDBSpinner,
 } from "mdb-react-ui-kit";
 import { useState } from "react";
 import { useAppContext } from "../context";
 import { createPost } from "../lib";
-// {
-//     MDBModal,
-//     MDBModalDialog,
-// mdm
-// }
-// from 'mdb-react-ui-kit'
 
 const AddPost = ({ isOpen, toggleShow }) => {
   const {
@@ -96,7 +92,7 @@ const AddPost = ({ isOpen, toggleShow }) => {
               <div className="mb-2">
                 <label htmlFor="image">Post content</label>
                 <MDBInput
-                  value={image}
+                  value={content}
                   onChange={handleContentInput}
                   placeholder="Post content"
                 />
@@ -116,7 +112,9 @@ const AddPost = ({ isOpen, toggleShow }) => {
             </MDBBtn>
           </MDBModalFooter>
         </MDBModalContent>
-      </MDBModalDial>
+      </MDBModalDialog>
     </MDBModal>
   );
 };
+
+export default AddPost;

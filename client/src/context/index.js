@@ -16,14 +16,15 @@ const initialState = {
 export const AppContext = createContext(initialState);
 
 const AppProvider = (props) => {
-  cost[(appState, appDispatch)] = useReducer(appReducer, initialState);
+  const [appState, appDispatch] = useReducer(appReducer, initialState);
 
   const { userId } = appState;
-
+  // console.log("in context");
   useEffect(() => {
-    // getch initial posts
+    // getch initial postns
     const getFetchPosts = async () => {
       const res = await getPosts();
+      // console.log("res", res);
       appDispatch({ type: GET_POSTS, payload: res });
     };
     getFetchPosts();
