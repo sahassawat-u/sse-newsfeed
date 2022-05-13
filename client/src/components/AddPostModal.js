@@ -10,7 +10,7 @@ import {
   MDBModalTitle,
   MDBSpinner,
 } from "mdb-react-ui-kit";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useAppContext } from "../context";
 import { createPost } from "../lib";
 

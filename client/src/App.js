@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import "./App.css";
-import AddPost from "./components/AddPost";
+import AddPost from "./components/AddPostModal";
 import Posts from "./components/Posts";
 import { useAppContext } from "./context";
 
@@ -16,9 +16,9 @@ function App() {
   const toggleShow = () => setIsOpen(!isOpen);
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="">
         <div className="d-flex justify-content-between">
-          <h2>SSE Realtime Newsfeed</h2>
+          <h2 className="mr-2">SSE Realtime Newsfeed</h2>
           <MDBBtn onClick={() => toggleShow()}>Add Post</MDBBtn>
         </div>
       </header>

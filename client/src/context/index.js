@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid";
-import { createContext, useContext, useEffect, useReducer } from "react";
+import React, { createContext, useContext, useEffect, useReducer } from "react";
 import { toast } from "react-toastify";
 import { GET_POSTS, GET_POST_STREAM, POST_REACTION } from "../actions";
 import { ssEvents } from "../config";
@@ -33,7 +33,9 @@ const AppProvider = (props) => {
 
     // listen to post event
     ssEvents.addEventListener("post", (e) => {
+      console.log("hi in sse post event");
       const data = JSON.parse(e.data);
+
       if (userId !== data.userId) {
         toast("New incoming post", {
           position: "bottom-right",

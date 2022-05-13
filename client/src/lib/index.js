@@ -13,7 +13,7 @@ export const getPosts = async () => {
 };
 
 export const createPost = async (body) => {
-  console.log(body);
+  // console.log(body);
   try {
     const {
       data: { data = [], message, error },
@@ -30,6 +30,7 @@ export const postReaction = async (body) => {
     const {
       data: { data = [], message, error },
     } = await Axios.patch(`/posts/${body.id}`, body);
+    return { data, message, error };
   } catch (error) {
     return { data: [], message: error.message, error: true };
   }

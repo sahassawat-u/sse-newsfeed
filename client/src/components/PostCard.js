@@ -17,12 +17,12 @@ const PostCard = ({ post }) => {
     appDispatch,
   } = useAppContext();
 
-  console.log(post.likers.includes(userId));
+  // console.log(post.likers.includes(userId));
   const handlePostLike = async (_post) => {
     try {
       appDispatch({
         type: POST_REACTION,
-        payload: { id: _post._id, likers: [...post.linkers, userId] },
+        payload: { id: _post._id, likers: [...post.likers, userId] },
       });
       await postReaction({ userId, id: _post._id });
     } catch (error) {}
